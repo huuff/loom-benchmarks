@@ -18,8 +18,10 @@ dependencies {
 
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
     implementation("org.springframework.boot:spring-boot-starter-data-rest")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("com.opencsv:opencsv:5.7.0")
 
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }

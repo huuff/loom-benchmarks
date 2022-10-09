@@ -3,6 +3,7 @@ plugins {
     id("org.springframework.boot") version "2.7.4"
     id("io.freefair.lombok") version "6.5.1"
     id("org.openapi.generator") version "6.2.0"
+    id("com.google.cloud.tools.jib") version "3.2.1"
 }
 
 group = "xyz.haff.loombenchmarks"
@@ -53,4 +54,13 @@ tasks.compileJava {
 
 java {
     sourceSets["main"].java.srcDir(file("$apiGeneratedSources/src/main/java"))
+}
+
+jib {
+    from {
+        image = "gcr.io/distroless/java17-debian11@sha256:80b21bccb947050e0a944848340cf2cc229ec0f174490d263b57a66a60d290a2"
+    }
+    to {
+        image = "loom-benchmark-mvc-client"
+    }
 }

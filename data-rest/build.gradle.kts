@@ -2,6 +2,7 @@ plugins {
     id("java")
     id("org.springframework.boot") version "2.7.4"
     id("io.freefair.lombok") version "6.5.1"
+    id("com.google.cloud.tools.jib") version "3.2.1"
 }
 
 group = "xyz.haff.loombenchmarks"
@@ -26,6 +27,15 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
-tasks.getByName<Test>("test") {
+tasks.test {
     useJUnitPlatform()
+}
+
+jib {
+    from {
+        image = "gcr.io/distroless/java17-debian11@sha256:80b21bccb947050e0a944848340cf2cc229ec0f174490d263b57a66a60d290a2"
+    }
+    to {
+        image = "loom-benchmark-data-rest"
+    }
 }

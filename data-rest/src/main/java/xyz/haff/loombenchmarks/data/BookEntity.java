@@ -1,7 +1,6 @@
 package xyz.haff.loombenchmarks.data;
 
-import com.opencsv.bean.CsvBindByPosition;
-
+import com.opencsv.bean.CsvBindByName;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
@@ -14,15 +13,14 @@ public class BookEntity {
     @Id
     private String id;
 
-    // TODO: bind by name
-    @CsvBindByPosition(position = 3)
+    @CsvBindByName(column = "Title")
     private String title;
     // TODO: as LocalDate
-    @CsvBindByPosition(position = 2)
+    @CsvBindByName(column = "Issued")
     private String date;
-    @CsvBindByPosition(position = 4)
+    @CsvBindByName(column = "Language")
     private String language;
     // TODO: as list
-    @CsvBindByPosition(position = 5)
+    @CsvBindByName(column = "Authors")
     private String authors;
 }

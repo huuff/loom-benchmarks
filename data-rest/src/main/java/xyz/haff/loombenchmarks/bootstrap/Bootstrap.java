@@ -22,7 +22,6 @@ public class Bootstrap implements CommandLineRunner {
         if (repository.count() != 0L) // Only if there's no data
             return;
 
-        // TODO: This is wrongly persisting the first row!
         List<BookEntity> books = new CsvToBeanBuilder<BookEntity>(
                 new FileReader(getClass().getClassLoader().getResource("gutenberg_index.csv").getFile())
         ).withType(BookEntity.class).build().parse();

@@ -1,12 +1,12 @@
-package xyz.haff.loombenchmarks.bootstrap;
+package xyz.haff.loombenchmarks.data_rest.bootstrap;
 
 import com.opencsv.bean.CsvToBeanBuilder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
-import xyz.haff.loombenchmarks.data.BookEntity;
-import xyz.haff.loombenchmarks.repository.BookRepository;
+import xyz.haff.loombenchmarks.data_rest.data.BookEntity;
+import xyz.haff.loombenchmarks.data_rest.repository.BookRepository;
 
 import java.io.FileReader;
 import java.util.List;

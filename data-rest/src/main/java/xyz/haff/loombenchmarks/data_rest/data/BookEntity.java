@@ -1,4 +1,4 @@
-package xyz.haff.loombenchmarks.data;
+package xyz.haff.loombenchmarks.data_rest.data;
 
 import com.opencsv.bean.CsvBindByName;
 import lombok.Data;

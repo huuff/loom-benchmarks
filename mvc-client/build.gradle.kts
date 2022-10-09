@@ -2,6 +2,7 @@ plugins {
     id("java")
     id("org.springframework.boot") version "2.7.4"
     id("io.freefair.lombok") version "6.5.1"
+    id("org.openapi.generator") version "6.2.0"
 }
 
 group = "xyz.haff.loombenchmarks"

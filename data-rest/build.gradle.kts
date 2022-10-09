@@ -14,11 +14,14 @@ repositories {
 
 dependencies {
     val junitVersion = "5.9.0"
+    val springdocVersion = "1.6.11"
 
     implementation(platform("org.springframework.boot:spring-boot-dependencies:2.7.4"))
 
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
     implementation("org.springframework.boot:spring-boot-starter-data-rest")
+    implementation("org.springdoc:springdoc-openapi-ui:$springdocVersion")
+    implementation("org.springdoc:springdoc-openapi-data-rest:$springdocVersion")
     implementation("com.opencsv:opencsv:5.7.0")
 
 
